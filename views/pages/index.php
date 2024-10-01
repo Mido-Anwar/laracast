@@ -12,11 +12,16 @@ require PAGES_COMPONENT ."pages.header.php";
     <!-- Your content -->
     <pre>
   <?php
-
-
-
+$posts = $connection->query("SELECT * FROM posts;");
   ?>
 </pre>
+<?php foreach($posts as $post) :  ?>
+ 
+<li>post Id :<?=$post['id']?></li>
+<li>post title :<?=$post['title'] ?></li>
+
+  <?php endforeach ?>
+
   </div>
 </main>
 
