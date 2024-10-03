@@ -10,6 +10,7 @@ define('PAGES_COMPONENT', realpath("views/partials") . DS);
 $path = $_SERVER['DOCUMENT_ROOT'] . "/laracast_php/views/partials/";
 $configPath = $_SERVER['DOCUMENT_ROOT'] . "/laracast_php/include/";
 
+// page head content
 function headerName($name, $c = 0)
 {
     if ($c == 1) {
@@ -18,14 +19,19 @@ function headerName($name, $c = 0)
         return $name;
     }
 }
-function isUrl(string $url)
+//check url path for styling
+function isUrl($url)
 {
     return $_SERVER['REQUEST_URI'] == $url ? true : false;
 }
-
+function authorize($condetion,$status= Response::FORBIDDEN){
+    if(! $condetion){
+        abort($status);
+    }
+}
 function dd($value)
 {
-    echo "<pre>{}";
+    echo "<pre>";
     var_dump($value);
     echo "</pre>";
     die();

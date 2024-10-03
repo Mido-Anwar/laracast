@@ -1,12 +1,16 @@
 <?php
-
+require "database.config.php";
 class Database
 {
     public $connection;
+    public $statement;
     public function __construct($servername, $dbName, $username, $password)
     {
+        // http_build_query();
         try {
-            $this->connection = new PDO("mysql:host=$servername;dbname=$dbName", $username, $password);
+            $this->connection = new PDO("mysql:host=$servername;dbname=$dbName", $username, $password, [
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            ]);
             // set the PDO error mode to exception
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
@@ -14,12 +18,31 @@ class Database
         }
     }
 
-    public function query($query)
+    public function query($query, $params = [])
     {
-        $stm = $this->connection->prepare($query);
-        $stm->execute();
-        return $stm->fetchAll(PDO::FETCH_ASSOC);
+        $this->statement = $this->connection->prepare($query);
+        $this->statement->execute($params);
+        return $this;
+    }
+    public function all($query)
+    {
+        $this->statement = $this->connection->prepare($query);
+        $this->statement->execute();
+        return $this->statement;
+    }
+    public function find()
+    {
+        return $this->statement->fetch();
+    }
+    public function findOrFail()
+    {
+        $result = $this->find();
+        if (! $result) {
+            abort();
+        } else {
+            return $result;
+        }
     }
 }
 
-$connection = new Database("localhost", "laracast", "root", "");
+const DB_CONNECTION = new Database(SERVER_NAME, DB_NAME, USER_NAME, DB_PASSWORD);

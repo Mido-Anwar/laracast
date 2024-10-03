@@ -1,5 +1,5 @@
 <?php
-require PAGES_COMPONENT ."pages.header.php";
+require PAGES_COMPONENT . "pages.header.php";
 ?>
 
 <header class="bg-white shadow">
@@ -12,19 +12,18 @@ require PAGES_COMPONENT ."pages.header.php";
     <!-- Your content -->
     <pre>
   <?php
-$posts = $connection->query("SELECT * FROM posts;");
+  // $id = $_GET['id'];
+  //  $query = "SELECT * FROM posts where id = ?";
+  // $query = "SELECT * FROM posts where id = :id"; assoc array
+
+  // $posts = DB_CONNECTION->query($query,[$id]);
   ?>
 </pre>
-<?php foreach($posts as $post) :  ?>
- 
-<li>post Id :<?=$post['id']?></li>
-<li>post title :<?=$post['title'] ?></li>
 
-  <?php endforeach ?>
 
   </div>
 </main>
 
 <?php
-require PAGES_COMPONENT ."pages.footer.php";
+require PAGES_COMPONENT . "pages.footer.php";
 ?>
