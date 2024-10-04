@@ -12,10 +12,7 @@ require PAGES_COMPONENT . "pages.header.php";
 <main>
   <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <!-- Your content -->
-    <?php
-    var_dump(parse_url($_SERVER['REQUEST_URI']));
-
-    ?>
+ 
   </div>
 </main>
 <?php

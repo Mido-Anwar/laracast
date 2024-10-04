@@ -28,6 +28,10 @@ $posts = DB_CONNECTION->all($queryall)->fetchAll();
             <?php endforeach ?>
         </ul>
     </div>
+
+    <p class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <a href="/post/create" class="bg-green-600 text-white rounded-md px-3 py-2 text-sm font-medium">add post</a>
+    </p>
 </main>
 
 <?php

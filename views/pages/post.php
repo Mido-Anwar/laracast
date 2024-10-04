@@ -9,7 +9,7 @@ authorize($post['user_id'] == $currentUserId);
 
 <header class="bg-white shadow">
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold tracking-tight text-gray-900"><?= headerName($post['title'], 1) ?></h1>
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900"><?= headerName(htmlspecialchars($post['title']), 1) ?></h1>
     </div>
 </header>
 <main>
@@ -21,7 +21,7 @@ authorize($post['user_id'] == $currentUserId);
 
         ?>
 
-        <?= $post['content'] ?>
+        <?= htmlspecialchars($post['content']) ?>
 
     </div>
 </main>
