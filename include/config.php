@@ -1,14 +1,15 @@
 <?php
-
 define("DS", DIRECTORY_SEPARATOR);
-define('HTTP_ROOT', 'http://localhost/');
-define('MAIN_PAGE', HTTP_ROOT . "laracast_php/");
-define('PAGES_PATH', HTTP_ROOT . "laracast_php/views/pages/");
-define('PAGES_COMPONENT', realpath("views/partials") . DS);
+define('PS', PATH_SEPARATOR);
+define('PAGES_COMPONENT', realpath("views") . DS);
+//define('APP_PATH', dirname(realpath(__FILE__)));
 
 
-$path = $_SERVER['DOCUMENT_ROOT'] . "/laracast_php/views/partials/";
-$configPath = $_SERVER['DOCUMENT_ROOT'] . "/laracast_php/include/";
+//helper function to page component;
+function view($path)
+{
+    require PAGES_COMPONENT . $path;
+}
 
 // page head content
 function headerName($name, $c = 0)
@@ -24,8 +25,9 @@ function isUrl($url)
 {
     return $_SERVER['REQUEST_URI'] == $url ? true : false;
 }
-function authorize($condetion,$status= Response::FORBIDDEN){
-    if(! $condetion){
+function authorize($condetion, $status = Response::FORBIDDEN)
+{
+    if (! $condetion) {
         abort($status);
     }
 }
@@ -36,6 +38,9 @@ function dd($value)
     echo "</pre>";
     die();
 }
+// autoload 
 
-
-
+spl_autoload_register(function ($class) {
+    require $class . ".php";
+});
+const DB_CONNECTION = new Database(SERVER_NAME, DB_NAME, USER_NAME, DB_PASSWORD);

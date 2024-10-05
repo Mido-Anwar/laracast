@@ -1,5 +1,5 @@
 <?php
-require PAGES_COMPONENT . "pages.header.php";
+view("partials/pages.header.php");
 // $id = $_GET['id'];
 $queryuser = "SELECT * FROM posts where user_id = ?";
 $queryall = "SELECT * FROM posts;";
@@ -35,5 +35,6 @@ $posts = DB_CONNECTION->all($queryall)->fetchAll();
 </main>
 
 <?php
-require PAGES_COMPONENT . "pages.footer.php";
+view("partials/pages.footer.php");
+
 ?>

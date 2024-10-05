@@ -3,12 +3,5 @@
         <p style="color:red;"> you are unauthorized </p>
         <a href="/">GO To Home</a>
         <!-- Your content -->
-        <pre>
-  <?php
-
-
-
-    ?>
-</pre>
     </div>
 </main>

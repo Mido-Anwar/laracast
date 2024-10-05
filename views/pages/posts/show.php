@@ -1,7 +1,8 @@
 <?php
-require PAGES_COMPONENT . "pages.header.php";
-$query = "SELECT * FROM posts where id = :id";
+view("partials/pages.header.php");
 
+
+$query = "SELECT * FROM posts where id = :id";
 $post = DB_CONNECTION->query($query, ['id' => $_GET['id']])->findOrFail();
 $currentUserId = 1;
 authorize($post['user_id'] == $currentUserId);
@@ -27,5 +28,6 @@ authorize($post['user_id'] == $currentUserId);
 </main>
 
 <?php
-require PAGES_COMPONENT . "pages.footer.php";
+view("partials/pages.footer.php");
+
 ?>

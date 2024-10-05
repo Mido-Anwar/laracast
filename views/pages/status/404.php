@@ -3,12 +3,5 @@
         <p style="color:red;"> sorry page not found</p>
         <a href="/">GO To Home</a>
         <!-- Your content -->
-        <pre>
-  <?php
-
-
-
-    ?>
-</pre>
     </div>
 </main>

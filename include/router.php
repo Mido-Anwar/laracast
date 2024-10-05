@@ -5,7 +5,7 @@ $routes = require("routes.php");
 function abort($status_code = 404)
 {
     http_response_code($status_code);
-    require "views/pages/{$status_code}.php";
+    require "views/pages/status/{$status_code}.php";
     die();
 }
 // Get the requested URL

@@ -45,4 +45,3 @@ class Database
     }
 }
 
-const DB_CONNECTION = new Database(SERVER_NAME, DB_NAME, USER_NAME, DB_PASSWORD);

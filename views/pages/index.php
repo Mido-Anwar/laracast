@@ -1,5 +1,5 @@
 <?php
-require PAGES_COMPONENT . "pages.header.php";
+view("partials/pages.header.php");
 ?>
 
 <header class="bg-white shadow">
@@ -10,20 +10,10 @@ require PAGES_COMPONENT . "pages.header.php";
 <main>
   <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <!-- Your content -->
-    <pre>
-  <?php
-  // $id = $_GET['id'];
-  //  $query = "SELECT * FROM posts where id = ?";
-  // $query = "SELECT * FROM posts where id = :id"; assoc array
-
-  // $posts = DB_CONNECTION->query($query,[$id]);
-  ?>
-</pre>
-
 
   </div>
 </main>
 
 <?php
-require PAGES_COMPONENT . "pages.footer.php";
+view("partials/pages.footer.php");
 ?>

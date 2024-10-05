@@ -4,7 +4,7 @@ return [
     "/" => "views/pages/index.php",
     "/about" => "views/pages/about.php",
     "/contact" => "views/pages/contact.php",
-    "/posts"=> "views/pages/posts.php",
-    "/post"=> "views/pages/post.php",
-    "/post/create"=>"views/pages/post.create.php",
+    "/posts" => "views/pages/posts/index.php",
+    "/post" => "views/pages/posts/show.php",
+    "/post/create" => "views/pages/posts/create.php",
 ];
