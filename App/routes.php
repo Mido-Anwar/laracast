@@ -8,3 +8,5 @@ return [
     "/post" => "views/pages/posts/show.php",
     "/post/create" => "views/pages/posts/create.php",
 ];
+
+

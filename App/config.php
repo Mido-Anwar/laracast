@@ -1,16 +1,27 @@
 <?php
+
+use App\Database, App\Response, App\Router, App\Validator;
+use App\Controller\Controller;
+
 define("DS", DIRECTORY_SEPARATOR);
 define('PS', PATH_SEPARATOR);
-define('PAGES_COMPONENT', realpath("views") . DS);
+define('VIEWS', realpath("views/pages") . DS);
+define('PAGE_COMPONENT', dirname(realpath("views/partials")) . DS);
+define('APP_PATH', dirname(realpath(__FILE__)) . DS);
+
 //define('APP_PATH', dirname(realpath(__FILE__)));
 
 
 //helper function to page component;
 function view($path)
 {
-    require PAGES_COMPONENT . $path;
+  
+    require VIEWS. $path;
 }
-
+function component($path)
+{
+    require PAGE_COMPONENT . $path;
+}
 // page head content
 function headerName($name, $c = 0)
 {
@@ -28,7 +39,7 @@ function isUrl($url)
 function authorize($condetion, $status = Response::FORBIDDEN)
 {
     if (! $condetion) {
-        abort($status);
+        //  abort($status);
     }
 }
 function dd($value)
@@ -41,6 +52,7 @@ function dd($value)
 // autoload 
 
 spl_autoload_register(function ($class) {
-    require $class . ".php";
+
+    require  $class . ".php";
 });
 const DB_CONNECTION = new Database(SERVER_NAME, DB_NAME, USER_NAME, DB_PASSWORD);

@@ -1,7 +1,15 @@
 <?php
+
+namespace App;
+
+use PDO;
+use PDOException;
+
 require "database.config.php";
 class Database
 {
+
+    
     public $connection;
     public $statement;
     public function __construct($servername, $dbName, $username, $password)
@@ -38,10 +46,9 @@ class Database
     {
         $result = $this->find();
         if (! $result) {
-            abort();
+          //  abort();
         } else {
             return $result;
         }
     }
 }
-

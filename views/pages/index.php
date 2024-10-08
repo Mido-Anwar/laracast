@@ -1,5 +1,5 @@
 <?php
-view("partials/pages.header.php");
+//component("pages.header.php");
 ?>
 
 <header class="bg-white shadow">
@@ -15,5 +15,5 @@ view("partials/pages.header.php");
 </main>
 
 <?php
-view("partials/pages.footer.php");
+//view("partials/pages.footer.php");
 ?>
