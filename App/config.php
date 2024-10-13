@@ -6,7 +6,7 @@ use App\Controller\Controller;
 define("DS", DIRECTORY_SEPARATOR);
 define('PS', PATH_SEPARATOR);
 define('VIEWS', realpath("views/pages") . DS);
-define('PAGE_COMPONENT', dirname(realpath("views/partials")) . DS);
+define('PAGE_COMPONENT', realpath("views/partials") . DS);
 define('APP_PATH', dirname(realpath(__FILE__)) . DS);
 
 //define('APP_PATH', dirname(realpath(__FILE__)));
