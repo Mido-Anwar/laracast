@@ -11,11 +11,16 @@
 <body>
     <div>
 
-    
+        // this is a comment
+        /* 
+        this is a multi line comment
+        this is a multi line comment
+        this is a multi line comment
+        this is a multi line comment
+        */
+        
         <?php
-
         echo "mido";
-
         ?>
     </div>
     <script src="js/app.js"></script>
