@@ -3,29 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
-.hr{
-  width :70%;
-  height: 10px;
-  background-color: red;
+h1 {
+  color: red;
 }
-.main {
-  width: 100%;
-  background-color: gray;
-  min-height: 100vw;
-  .head{
-    width: 100%;
-    height: 5vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: green;
-    background-color: skyblue;
-    margin-bottom: 150px;
-  }
-  .lessons{
-    width:100%;
-    background-color: rgb(179, 148, 148);
-    font-size: large;
-    color: blue;
-  }
+p{
+  width: 60rem;
+  color: rgb(18, 18, 19);
+  background-color: cadetblue;
+}
+.holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ width: 80rem;
 }
