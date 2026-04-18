@@ -63,7 +63,19 @@
                 this is identifier a variable that holds a value of type string or integer or float or boolean
             </p>
         </div>
-    
+    <div class="holder">
+        <h2>operators</h2>
+        <p>
+            + - * / % are arithmetic operators
+            = is an assignment operator
+            == is a comparison operator
+            === is a strict comparison operator
+            != is a not equal operator
+            !== is a not strict comparison operator
+            > < >= <= are comparison operators
+            && || ! are logical operators
+        </p>
+    </div>
     </div>
     <script src="js/app.js"></script>
 </body>
